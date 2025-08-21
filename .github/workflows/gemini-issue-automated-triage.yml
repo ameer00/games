@@ -95,10 +95,10 @@ jobs:
               "coreTools": [
                 "run_shell_command(echo)"
               ],
-              "telemetry": {
-                "enabled": false,
-                "target": "gcp"
-              }
+              # "telemetry": {
+              #   "enabled": false,
+              #   "target": "gcp"
+              # }
             }
           prompt: |-
             ## Role
