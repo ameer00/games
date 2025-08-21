@@ -18,4 +18,4 @@ When pulling issues from a project or repository, always use the following repos
 
 # Workflow
 
-When a new change is being requested from an issue, create a new Git branch with the name issue-<issueNumber>. Once the plan is completed, create a pull request in the repo.
+When a new change is being requested from an issue, create a new Git branch with the name issue-<issueNumber>. Once the plan is completed, create a pull request in the repo. If creating a new branch fails, try again using Git tools and NOT the MCP server. If it still fails, wait and ask the user for help.
