@@ -1,0 +1,27 @@
+
+# Gemini Task Log
+
+## Task At Hand
+Implement a web-based Tetris game using PixiJS.
+
+## User Request
+"issue #3"
+
+## Overall Plan
+1.  Set up the basic HTML structure.
+2.  Initialize PixiJS application.
+3.  Implement the Tetris game board.
+4.  Create Tetromino shapes.
+5.  Implement Tetromino movement and rotation.
+6.  Implement line clearing.
+7.  **[Current]** Add scoring and level progression.
+8.  Implement game over logic.
+9.  Final Review and Testing.
+
+## Current Step Rationale
+This step is about adding the scoring and level progression mechanics, which are essential for making the game challenging and rewarding for the player.
+
+## Plan for this Step
+1.  Implement a scoring system (e.g., points for cleared lines).
+2.  Increase the game speed (level) after a certain number of lines are cleared.
+3.  Display the score and level on the screen.

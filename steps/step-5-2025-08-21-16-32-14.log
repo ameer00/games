@@ -1,0 +1,28 @@
+
+# Gemini Task Log
+
+## Task At Hand
+Implement a web-based Tetris game using PixiJS.
+
+## User Request
+"issue #3"
+
+## Overall Plan
+1.  Set up the basic HTML structure.
+2.  Initialize PixiJS application.
+3.  Implement the Tetris game board.
+4.  Create Tetromino shapes.
+5.  **[Current]** Implement Tetromino movement and rotation.
+6.  Implement line clearing.
+7.  Add scoring and level progression.
+8.  Implement game over logic.
+9.  Final Review and Testing.
+
+## Current Step Rationale
+This step is about making the game interactive. It will allow the player to control the Tetrominoes, which is the core gameplay mechanic.
+
+## Plan for this Step
+1.  Add event listeners for keyboard input (left, right, down, up for rotation).
+2.  Implement functions to move the current Tetromino left, right, and down.
+3.  Implement a function to rotate the current Tetromino.
+4.  Add collision detection to prevent the Tetromino from moving out of bounds or overlapping with other blocks.
