@@ -1,0 +1,7 @@
+description="Reset the demo by deleting all new folders and git branch"
+prompt="""
+delete the plans and steps folders
+based on the chat history delete the current game folders
+if not in main git branch, switch to main git branch and delete the current game git branch
+never delete the main git branch
+"""
