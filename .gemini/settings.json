@@ -1,26 +1,8 @@
 {
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
-    },
-    "github": {
-    "command": "docker",
-    "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "ghcr.io/github/github-mcp-server"
-    ],
-    "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}"
-    }
-    },
-    "nodeServer": {
-      "command": "node",
-      "args": ["/home/user/mcp/poem/poem.js"]
-    }
+  "debug": false,
+  "maxSessionTurns": 50,
+  "telemetry": {
+    "enabled": false,
+    "target": "gcp"
   }
 }
