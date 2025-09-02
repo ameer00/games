@@ -1,0 +1,27 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+canvas {
+    border: 3px solid #ecf0f1;
+    background: #34495e;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
