@@ -100,7 +100,9 @@ You **MUST** format the contents of `plans/[feature_name].md` exactly as follows
 2. **Switch to the new branch**:
    - All subsequent steps must occur in this new branch.
 
-3. **Step 3**: [Detailed actionable step]
+3. **Commit Changes**: The commit message should begin with the step number for example step-01-<short summary of the change>.
+
+4. **Step 3**: [Detailed actionable step]
    - Files to modify: `path/to/file.ext`
    - Changes needed: [specific description]
 

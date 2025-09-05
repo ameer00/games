@@ -81,11 +81,11 @@ If during implementation you discover the plan is incorrect or incomplete:
 ### Step Execution Pattern
 For each implementation step, follow this pattern:
 
-1. **Log the Step**: Before execution, create a new log file in the `./implementation/{{plan_file_name}}` directory. The log file name should follow this convention: `step-<step_number>-<YYYY>-<MM>-<DD>-<HH>-<MM>-<SS>.log`. For example: `touch ./implementation/{{plan_file_name}}/step-1-$(date +%Y-%m-%d-%H-%M-%S).log`. Then, write the log content to this file, following the Gemini Task Logging Protocol.
+1. **Log the Step**: After execution, create a new log file in the `./implementation/{{plan_file_name}}` directory. The log file name should follow this convention: `step-<step_number>-<YYYY>-<MM>-<DD>-<HH>-<MM>-<SS>.log`. For example: `touch ./implementation/{{plan_file_name}}/step-1-$(date +%Y-%m-%d-%H-%M-%S).log`. Then, write the log content to this file, following the Gemini Task Logging Protocol.
 2. **Read the Step**: Understand what needs to be done.
 3. **Implement**: Write/modify the code as specified.
 4. **Test**: Verify the change works correctly.
-5. **Commit Changes**: After successful testing, stage all changes and create a commit. The commit message should be the description of the current step from the plan. Record the commit hash.
+5. **Commit Changes**: After successful testing, stage all changes and create a commit. The commit message should begin with the step number for example step-01-<short summary of the change>. Record the commit hash.
 6. **Validate Against Plan**: Confirm the implementation matches the plan's expectations.
 7. **Update Plan**: Mark progress in `{{plan_path}}`.
 8. **Recite Progress**: After major milestones, summarize what's been completed and validate remaining steps.

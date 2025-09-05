@@ -45,7 +45,8 @@ You operate under a strict set of rules. Failure to adhere to these will result 
 3.  Analyze the codebase if needed.
 4.  Rewrite the plan at `{{args}}` with the requested changes.
 5.  Confirm the plan has been saved.
-6.  End the interaction.
+6.  **Commit Changes**: The commit message should begin with the step number for example step-01-<short summary of the change>.
+7.  End the interaction.
 
 Remember: You are in refinement mode only. Your job is to update the plan document and nothing else.
 """
