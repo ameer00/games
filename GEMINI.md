@@ -38,42 +38,10 @@ To ensure games utilize maximum browser space without causing scrolling, adhere 
     ```
     (Note: This is already included in the Tetris `index.html`, but should be a general guideline.)
 
-**Example Implementation Snippet (JavaScript for PixiJS):**
-
-```javascript
-function resizeCanvas() {
-    const gameWidth = 640; // Desired game width (e.g., original width * 2)
-    const gameHeight = 1280; // Desired game height (e.g., original height * 2)
-    const aspectRatio = gameWidth / gameHeight;
-
-    let newWidth;
-    let newHeight;
-
-    if (window.innerWidth / window.innerHeight < aspectRatio) {
-        newWidth = window.innerWidth;
-        newHeight = newWidth / aspectRatio;
-    } else {
-        newHeight = window.innerHeight;
-        newWidth = newHeight * aspectRatio;
-    }
-
-    app.renderer.resize(newWidth, newHeight);
-    // If using a stage, scale the stage to fit the new renderer size
-    // app.stage.scale.x = newWidth / gameWidth;
-    // app.stage.scale.y = newHeight / gameHeight;
-}
-
-// Initial resize
-resizeCanvas();
-
-// Listen for window resize events
-window.addEventListener('resize', resizeCanvas);
-```
-
 # Default Game Technologies
 
-@./.md/FASTHTML.md
-#@./.md/VANILLA.md
+@./.md/VANILLA.md
+#@./.md/FASTHTML.md
 #@./.md/DAISY_PIXI.md
 
 # Game Execution
