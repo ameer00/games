@@ -23,3 +23,11 @@ When a new change is being requested from an issue, create a new Git branch with
 # Game Requirements
 
 For each game, always have a working scoreboard. A start, stop and pause button. If applicable, a difficulty selection option.
+
+# Default Game Technologies
+
+If the language, framework, and other details are not specified, use the following:
+
+-   All web-based games must be built using HTML, CSS, and JavaScript.
+-   Use TailwindCSS for a modern look and feel. Always design a modern look and feel. Use TailwindCSS CDN details here: `https://tailwindcss.com/docs/installation/play-cdn`.
+-   Use PixiJS framework. Get the `llms-full.txt` file from `https://pixijs.com/llms-full.txt`.
