@@ -22,7 +22,7 @@ When a new change is being requested from an issue, create a new Git branch with
 
 # Game Requirements
 
-For each game, always have a working scoreboard. A start, stop and pause button. If applicable, a difficulty selection option.
+For each game, make sure it has a working scoreboard. A START, STOP, PAUSE/RESUME, and DIFFICULTY buttons or dropdowns. After the game is finished, always display a positive motivational message.
 
 # Responsive Game Design Guidelines
 
