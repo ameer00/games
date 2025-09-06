@@ -32,6 +32,7 @@ If the language, framework, and other details are not specified, use the followi
 -   Use TailwindCSS for a modern look and feel. Always design a modern look and feel. Use TailwindCSS CDN details here: `https://tailwindcss.com/docs/installation/play-cdn`. More details on TailwindCSS at
 @tailwindcss-llms.md
 -   Use PixiJS framework. Get the `llms-full.txt` file from `https://pixijs.com/llms-full.txt`.
+-   If the server is not specified, always use Node.js.
 
 # Game Execution
 
