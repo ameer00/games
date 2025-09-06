@@ -31,3 +31,8 @@ If the language, framework, and other details are not specified, use the followi
 -   All web-based games must be built using HTML, CSS, and JavaScript.
 -   Use TailwindCSS for a modern look and feel. Always design a modern look and feel. Use TailwindCSS CDN details here: `https://tailwindcss.com/docs/installation/play-cdn`.
 -   Use PixiJS framework. Get the `llms-full.txt` file from `https://pixijs.com/llms-full.txt`.
+
+# Game Execution
+
+-   If the port is not specified, run the game on port 8080.
+-   If there is another process running on port 8080, ask the user whether to kill the process.
