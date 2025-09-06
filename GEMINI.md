@@ -24,6 +24,51 @@ When a new change is being requested from an issue, create a new Git branch with
 
 For each game, always have a working scoreboard. A start, stop and pause button. If applicable, a difficulty selection option.
 
+# Responsive Game Design Guidelines
+
+To ensure games utilize maximum browser space without causing scrolling, adhere to the following principles:
+
+1.  **Dynamic Canvas Sizing:** Implement JavaScript logic to dynamically adjust the game canvas dimensions based on the available viewport size. This typically involves listening to `window.resize` events.
+2.  **Aspect Ratio Preservation:** Always maintain the game's intended aspect ratio during scaling to prevent distortion. Calculate the appropriate width or height based on the aspect ratio and the limiting dimension (width or height) of the viewport.
+3.  **CSS for Centering and Layout:** Utilize CSS (preferably TailwindCSS utilities) to center the game canvas within the browser window and manage overall page layout. Use flexbox or grid properties for responsive positioning.
+4.  **Viewport Meta Tag:** Ensure the `index.html` includes the following meta tag in the `<head>` section for proper responsiveness across devices:
+    ```html
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ```
+    (Note: This is already included in the Tetris `index.html`, but should be a general guideline.)
+
+**Example Implementation Snippet (JavaScript for PixiJS):**
+
+```javascript
+function resizeCanvas() {
+    const gameWidth = 640; // Desired game width (e.g., original width * 2)
+    const gameHeight = 1280; // Desired game height (e.g., original height * 2)
+    const aspectRatio = gameWidth / gameHeight;
+
+    let newWidth;
+    let newHeight;
+
+    if (window.innerWidth / window.innerHeight < aspectRatio) {
+        newWidth = window.innerWidth;
+        newHeight = newWidth / aspectRatio;
+    } else {
+        newHeight = window.innerHeight;
+        newWidth = newHeight * aspectRatio;
+    }
+
+    app.renderer.resize(newWidth, newHeight);
+    // If using a stage, scale the stage to fit the new renderer size
+    // app.stage.scale.x = newWidth / gameWidth;
+    // app.stage.scale.y = newHeight / gameHeight;
+}
+
+// Initial resize
+resizeCanvas();
+
+// Listen for window resize events
+window.addEventListener('resize', resizeCanvas);
+```
+
 # Default Game Technologies
 
 If the language, framework, and other details are not specified, use the following:
