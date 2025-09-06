@@ -74,8 +74,8 @@ window.addEventListener('resize', resizeCanvas);
 If the language, framework, and other details are not specified, use the following:
 
 -   All web-based games must be built using HTML, CSS, and JavaScript.
--   Use TailwindCSS for a modern look and feel. Always design a modern look and feel. Use TailwindCSS CDN details here: `https://tailwindcss.com/docs/installation/play-cdn`. More details on TailwindCSS at
-@llms/tailwindcss-llms.txt
+-   Use DaisyUI for a modern look and feel. Always design a modern look and feel. More details on DaisyUI at
+@llms/daisyui-llms.txt
 -   Use PixiJS framework. More details on PixiJS at
 @llms/pixijs-llms.txt
 -   If the server is not specified, always use Node.js.
