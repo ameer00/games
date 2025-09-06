@@ -83,3 +83,14 @@ If the language, framework, and other details are not specified, use the followi
 
 -   If the port is not specified, run the game on port 8080.
 -   If there is another process running on port 8080, ask the user whether to kill the process.
+
+# Server Execution
+
+At the end of any implementation that involves a web server, you must:
+
+1.  **Start the server:** Use the appropriate command to run the server in the background (e.g., `node server.js &` or `npm start &`).
+2.  **Verify the server is running:**
+    -   Check the server's output for any error messages.
+    -   Use a command like `curl` to make a request to the server and verify it returns a successful response (e.g., HTTP status code 200).
+3.  **Keep the server running:** Do not stop the server unless explicitly instructed to do so. This allows the user to test and interact with the implemented feature.
+4.  **Provide the server URL:** Inform the user of the URL where they can access the running application (e.g., `http://localhost:8080`).
