@@ -2,6 +2,13 @@
 
 > Tailwind CSS offers a utility-first CSS framework designed for rapid UI development, providing documentation, resources, and installation guides for seamless integration with various build tools and frameworks.
 
+- TailwindCSS CDN URL Links:
+https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/lib.min.js
+https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/colors.min.js
+https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/default-theme.min.js
+https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/flatten-color-palette.min.js
+https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/plugin.min.js
+
 - [Tailwind CSS Order Utilities](https://tailwindcss.com/docs/order): Provides utilities for controlling the order of flex and grid items in Tailwind CSS.
 - [Tailwind CSS Compatibility](https://tailwindcss.com/docs/compatibility): Provide information on Tailwind CSS compatibility with browsers and other tools.
 - [Responsive Design in Tailwind](https://tailwindcss.com/docs/responsive-design): To explain how to implement responsive design using Tailwind CSS utility classes effectively.

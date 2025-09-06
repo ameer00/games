@@ -1,5 +1,13 @@
 # PixiJS Documentation for LLMs
 
+PixiJS CDN URL Links:
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.1/pixi.min.js
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.1/webworker.min.js
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.1/packages/advanced-blend-modes.min.js
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.1/packages/gif.min.js
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.1/packages/math-extras.min.js
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.1/packages/unsafe-eval.min.js
+
 > PixiJS is the fastest, most lightweight 2D library available for the web, working across all devices and allowing you to create rich, interactive graphics and cross-platform applications using WebGL and WebGPU.
 
 This file contains all documentation content in a single document following the llmtxt.org standard.
@@ -2999,7 +3007,7 @@ The act of adding and removing the event when a sprite's texture was changed led
     DOMAdapter.get().createCanvas();
     ```
 
-- Application type now accepts Renderer instead of view by @Zyie in https://github.com/pixijs/pixijs/pull/9740
+- Application type now accepts Renderer instead of view by `@Zyie` in https://github.com/pixijs/pixijs/pull/9740
 
   This is to allow `app.renderer` to be typed correctly
 
@@ -3384,7 +3392,7 @@ No. PixiJS is what we've come to think of as a "creation engine". Whilst it is e
 PixiJS is maintained by three core developers who work on the project part-time:
 
 - Mat Groves ([@GoodBoyDigital](https://github.com/GoodBoyDigital))
-- Sean Burns ([@Zyie](https://github.com/Zyie))
+- Sean Burns ([`@Zyie`](https://github.com/Zyie))
 - Matt Karl ([@bigtimebuddy](https://github.com/bigtimebuddy))
 
 The project thrives thanks to our highly active community of contributors and sponsors. As part-time maintainers, your sponsorship directly supports our ability to improve PixiJS, fix bugs, and create better documentation. Consider supporting our work through [GitHub Sponsors](https://github.com/sponsors/pixijs) or [Open Collective](https://opencollective.com/pixijs).

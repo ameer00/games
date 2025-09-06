@@ -2,6 +2,11 @@
 daisyUI 5 is a CSS library for Tailwind CSS 4
 daisyUI 5 provides class names for common UI components
 
+DaisyUI CDN URL Links:
+https://cdnjs.cloudflare.com/ajax/libs/daisyui/5.1.7/daisyui.css
+https://cdnjs.cloudflare.com/ajax/libs/daisyui/5.1.7/themes.css
+https://cdnjs.cloudflare.com/ajax/libs/daisyui/5.1.7/themes.min.css
+
 - [daisyUI 5 docs](http://daisyui.com)
 - [Guide: How to use this file in LLMs and code editors](https://daisyui.com/docs/editor/)
 - [daisyUI 5 release notes](https://daisyui.com/docs/v5/)
