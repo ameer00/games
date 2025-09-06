@@ -60,6 +60,8 @@ Create a comprehensive implementation plan with:
 - **Testing Strategy**: How to verify the implementation
 - **Dependencies**: Any new packages or tools needed
 
+**Important Note on Step Granularity**: Each step should represent a distinct, actionable unit of work that ideally introduces new code or significant modifications. Avoid creating separate steps solely for verification of functionality already implemented in a previous step. If a feature is implicitly covered by an earlier step, note it in that step's implementation notes.
+
 ## Output Format for `.plans/[feature_name].md`
 
 You **MUST** format the contents of `plans/[feature_name].md` exactly as follows. Use markdown. The feature name should be short and descriptive, also make sure it can be used as a filename.
@@ -100,7 +102,7 @@ You **MUST** format the contents of `plans/[feature_name].md` exactly as follows
 2. **Switch to the new branch**:
    - All subsequent steps must occur in this new branch.
 
-3. **Commit Changes**: The commit message should begin with the step number for example step-01-<short summary of the change>.
+3. **Commit Changes**: The commit message should begin with `step-{{step_number}}-<short summary of the change>`.
 
 4. **Step 3**: [Detailed actionable step]
    - Files to modify: `path/to/file.ext`

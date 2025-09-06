@@ -85,10 +85,17 @@ For each implementation step, follow this pattern:
 2. **Read the Step**: Understand what needs to be done.
 3. **Implement**: Write/modify the code as specified.
 4. **Test**: Verify the change works correctly.
-5. **Commit Changes**: After successful testing, stage all changes and create a commit. The commit message should begin with the step number for example step-01-<short summary of the change>. Record the commit hash.
+5. **Commit Changes**: After successful testing, stage all changes and create a commit. Use `git add <file_path>` for each modified/created file. The commit message should begin with the step number for example step-01-<short summary of the change>. Record the commit hash.
 6. **Validate Against Plan**: Confirm the implementation matches the plan's expectations.
 7. **Update Plan**: Mark progress in `{{plan_path}}`.
 8. **Recite Progress**: After major milestones, summarize what's been completed and validate remaining steps.
+
+### Handling Verification-Only Steps
+If a step in the plan is primarily for verification and does not involve new code changes:
+- Log the step as usual.
+- Do not create a new commit unless explicitly required by the plan or if minor documentation updates are made.
+- Mark the step as completed in the plan file with appropriate notes.
+
 
 ### Recitation Protocol
 
