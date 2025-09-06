@@ -75,7 +75,7 @@ If the language, framework, and other details are not specified, use the followi
 
 -   All web-based games must be built using HTML, CSS, and JavaScript.
 -   Use TailwindCSS for a modern look and feel. Always design a modern look and feel. Use TailwindCSS CDN details here: `https://tailwindcss.com/docs/installation/play-cdn`. More details on TailwindCSS at
-@tailwindcss-llms.md
+@llms/tailwindcss-llms.txt
 -   Use PixiJS framework. Get the `llms-full.txt` file from `https://pixijs.com/llms-full.txt`.
 -   If the server is not specified, always use Node.js.
 
