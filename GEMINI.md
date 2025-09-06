@@ -18,7 +18,8 @@ When pulling issues from a project or repository, always use the following repos
 
 # Workflow
 
-When a new change is being requested from an issue, create a new Git branch with the name issue-<issueNumber>. Once the plan is completed, create a pull request in the repo.
+When a new change is being requested from an issue, create a new Git branch with the name <date as in YY-MM-DD>-issue-<issueNumber>. Once the plan is completed, create a pull request in the repo.
+If the task does not have an associated issue number, then create a branch in the form of <date in YY-MM-YY>-<planName>.
 
 # Game Requirements
 
