@@ -4,7 +4,8 @@
   "mcpServers": {
     "cloud-run": {
       "command": "npx",
-      "args": ["-y", "https://github.com/GoogleCloudPlatform/cloud-run-mcp"]
+      "args": ["-y", "@google-cloud/cloud-run-mcp"]
     }
-  }
+  },
+  "contextFileName": "context/GEMINI_CLOUDRUN.md"
 }

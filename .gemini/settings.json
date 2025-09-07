@@ -16,7 +16,15 @@
     ],
     "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}"
-    }
-    }
+      }
+    },
+   "cloud-run": {
+      "command": "npx",
+      "args": ["-y", "@google-cloud/cloud-run-mcp"],
+      "env": {
+            "GOOGLE_CLOUD_PROJECT": "${GOOGLE_CLOUD_PROJECT}",
+            "GOOGLE_CLOUD_REGION": "${GOOGLE_CLOUD_REGION}",
+      }
+   }
   }
 }
