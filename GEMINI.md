@@ -41,6 +41,7 @@ To ensure games utilize maximum browser space without causing scrolling, adhere 
 # Default Game Technologies
 
 @./.md/VANILLA.md
+@./.md/DAISYUI.md
 #@./.md/FASTHTML.md
 #@./.md/DAISY_PIXI.md
 
