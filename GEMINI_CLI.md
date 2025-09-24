@@ -1,0 +1,83 @@
+# Foundations
+
+- [Intro to Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/main/README.md)
+  - The Gemini CLI is an open-source AI agent that integrates Google's Gemini model directly into the terminal, offering lightweight access and a direct path from prompt to model. It provides free tier access, a powerful model, built-in tools, and is extensible.
+- Installation (and updating)
+  - [CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/deployment.md)
+    - The Gemini CLI can be run in several ways: standard installation via npm, as a sandbox using Docker/Podman for security and isolation, from source for developers, or directly from the latest GitHub commit.
+    - [Releases](https://github.com/google-gemini/gemini-cli/releases) (and notes)
+      - The GitHub releases page for `google-gemini/gemini-cli` shows a history of various preview and stable releases, each with a version number, commit hash, changelog, and assets.
+    - [Uninstall](https://github.com/google-gemini/gemini-cli/blob/main/docs/Uninstall.md)
+      - To uninstall the Gemini CLI, you need to clear the `_npx` cache directory if installed via `npx`, or use `npm uninstall -g @google/gemini-cli` if installed globally with npm.
+  - [IDE Plugin](https://cloud.google.com/gemini/docs/discover/set-up-gemini#install-gemini-code-assist)
+    - To set up Gemini Code Assist, an administrator needs to purchase a subscription, assign licenses, enable the Gemini for Google Cloud API, and grant necessary IAM roles. Users then install the plugin in their IDE and sign in.
+    - Agent Mode vs Interactive Chat
+- Auth and Login options
+  - [CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/authentication.md)
+    - The Gemini CLI requires authentication with Google's AI services. Methods include logging in with a Google account (OAuth), using a `gcloud` command for local development, or using a Gemini API Key for non-interactive environments.
+    - Google
+    - API
+    - Vertex
+  - IDE
+    - Google
+  - [Terms of Service](https://github.com/google-gemini/gemini-cli/blob/main/docs/tos-privacy.md)
+    - The `tos-privacy.md` document explains how data is handled based on the authentication method used. It also mentions that prompts, answers, and related code might be collected for model training depending on the account type and settings.
+- [Quotas and pricing](https://github.com/google-gemini/gemini-cli/blob/main/docs/quota-and-pricing.md)
+  - The Gemini CLI offers various quotas and pricing tiers, from a free tier for individual developers to pay-as-you-go options for professional and enterprise use, with costs based on the Gemini model used and token usage.
+- Navigating the CLI
+  - / [Slash commands](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md)
+    - The Gemini CLI supports several commands for managing sessions, customizing the interface, and controlling behavior, categorized by their prefix (`/`, `@`, `!`).
+  - @ [Context selection](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md#at-commands-)
+  - ! [Shell Commands](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md#shell-mode--passthrough-commands-)
+- [Settings](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md#gemini-cli-configuration)
+  - The Gemini CLI configuration is managed through a hierarchical system of `settings.json` and `GEMINI.md` files, with settings applied in a specific order of precedence.
+  - Hierarchy
+  - settings.json
+  - .env
+- [GEMINI.md](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md#context-files-hierarchical-instructional-context)
+  - `GEMINI.md` files are used to provide instructions to the model and tailor its behavior for specific projects. They are loaded hierarchically.
+  - Hierarchy
+  - [Imports](https://github.com/google-gemini/gemini-cli/blob/main/docs/core/memport.md)
+    - The Memory Import Processor feature allows for modularizing `GEMINI.md` files by importing content from other files using the `@file.md` syntax. It supports nested and circular imports, relative and absolute paths, and provides security features.
+  - Project / Personal / Global
+- [MCP](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/tutorials.md#setting-up-a-model-context-protocol-mcp-server)
+  - The search results provide several tutorials and guides for the Google Gemini CLI, including information about its features, installation, authentication, and how to use `GEMINI.md` files for project-specific instructions.
+  - Local / Remote
+- Agentic Prompting (CLI and IDE)
+  - [Interaction Flow](https://github.com/google-gemini/gemini-cli/blob/main/docs/architecture.md#interaction-flow) (ReAct Loop)
+    - The `google-gemini/gemini-cli` project follows a modular, client-server architecture with a `packages/cli` frontend and a `packages/core` backend that orchestrates interactions with the Gemini API and manages tool execution.
+  - Context
+  - [Tools](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/index.md)
+    - The Gemini CLI utilizes built-in tools to enable the Gemini model to interact with your local environment, access information, and perform actions beyond text generation. They are specific functions the Gemini model requests to execute, such as reading files (`read_file`) or running shell commands (`run_shell_command`).
+  - [Checkpointing](https://github.com/google-gemini/gemini-cli/blob/main/docs/checkpointing.md) and Chat Threads
+    - The Gemini CLI's Checkpointing feature automatically saves a snapshot of your project's state before AI-powered tools modify files. It can be enabled via a command-line flag or in the `settings.json` file. The `/restore` command can be used to revert to a specific checkpoint.
+  - [Token Optimization](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/token-caching.md)
+    - Token caching in Gemini CLI optimizes API costs by reusing previous system instructions and context, reducing token processing in subsequent requests. It's available for API key and Vertex AI users.
+- [Troubleshooting](https://github.com/google-gemini/gemini-cli/blob/main/docs/troubleshooting.md)
+  - This troubleshooting guide for the Gemini CLI covers common issues like authentication errors, FAQs, common error messages, exit codes for scripting, and debugging tips.
+
+# Advanced
+
+- [Custom Commands](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md#custom-commands) ([blog](https://cloud.google.com/blog/topics/developers-practitioners/gemini-cli-custom-slash-commands?e=48754805))
+  - The Gemini CLI now supports custom slash commands, allowing users to define reusable prompts in `.toml` files or through Model Context Protocol (MCP) prompts to streamline interactions and improve workflow efficiency.
+  - [MCP Prompts](https://cloud.google.com/blog/topics/developers-practitioners/gemini-cli-custom-slash-commands?e=48754805)
+- [Extensions](https://github.com/google-gemini/gemini-cli/blob/main/docs/extension.md)
+  - Gemini CLI Extensions allow users to expand the CLI's capabilities by packaging prompts, MCP servers, and custom commands. They can be installed, uninstalled, enabled, disabled, and updated.
+- Model Selection
+- [Non interactive mode for CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md#custom-commands)
+- Triggering CLI
+  - CI/CD (GitLab or [GitHub Actions](https://blog.google/technology/developers/introducing-gemini-cli-github-actions/) for example)
+    - Google has introduced Gemini CLI GitHub Actions, an AI coding teammate now in beta, designed to assist with issue triage and pull request reviews.
+  - Use Case: Code Review
+- [Telemetry](https://github.com/google-gemini/gemini-cli/blob/main/docs/telemetry.md)
+  - This document outlines how to enable and set up OpenTelemetry for the Gemini CLI, providing observability into its operations for usage analytics, performance monitoring, and real-time debugging.
+- [Contributing to Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/npm.md)
+  - This document describes the package structure of a monorepo containing two main packages: `@google/gemini-cli` and `@google/gemini-cli-core`. It also explains the use of NPM Workspaces for dependency management.
+- Some Good Practices
+  - Memory files
+  - Personas
+  - Common patterns
+    - Test Driven Development
+    - Spec Driven Development
+    - Research → Plan/Spec → (Refine) → (Validate) → Implement → Test → Execute → Commit → Review → Deploy → Monitor
+    - [Explain → Plan → Implement → Deploy](https://github.com/GoogleCloudPlatform/serverless-production-readiness-java-gcp/blob/main/genai/gemini-cli-extensions/best-practices/GEMINI-MODES.md) - an alternative to [configuring as custom commands](https://github.com/GoogleCloudPlatform/serverless-production-readiness-java-gcp/tree/main/genai/gemini-cli-extensions)
