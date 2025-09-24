@@ -1,4 +1,4 @@
-# Best Practices for AI Agentic Coding
+# Ideas and Guidance for AI Agentic Coding
 
 This document outlines a collection of best practices and ideas for effectively using AI agentic tools for coding tasks.
 
