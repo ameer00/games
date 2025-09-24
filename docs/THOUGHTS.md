@@ -235,3 +235,43 @@ Adopting AI tools and measuring their impact is a complex process that requires 
 4.  **Impact:** The final stage is about connecting the acceleration to business goals. This involves measuring the impact of the AI tool on key business metrics, such as revenue, customer satisfaction, and market share. Key metrics to track include **Business KPIs** and **Development Cost**.
 
 Source: [How to adopt Gemini Code Assist – and measure its impact](https://cloud.google.com/blog/products/application-development/how-to-adopt-gemini-code-assist-and-measure-its-impact)
+
+## 9. Scaling AI Tools in Large Organizations
+
+To maximize the benefits of AI tools, focus on the following capabilities:
+
+```
++-------------------------------------------------------------------------+
+|                      AI CAPABILITIES                                    |
++-------------------------------------------------------------------------+
+|                                                                         |
+|   +-----------------+   +-----------------+   +----------------------+  |
+|   |   Clear Stance  |   |  Data Ecosystem |   | AI-accessible Data   |  |
+|   +-----------------+   +-----------------+   +----------------------+  |
+|           |                     |                     |                 |
+|   +-----------------+   +-----------------+   +----------------------+  |
+|   | Version Control |   |  Small Batches  |   |  User-centric Focus  |  |
+|   +-----------------+   +-----------------+   +----------------------+  |
+|           |                     |                     |                 |
+|   +-----------------+                                                   |
+|   | Internal Platform|                                                  |
+|   +-----------------+                                                   |
+|                                                                         |
++-------------------------------------------------------------------------+
+```
+
+1.  **Clear and communicated AI stance:** Establish and socialize a clear policy on permitted AI tools and usage to build developer trust and amplify AI's positive impact on individual effectiveness and organizational performance.
+
+2.  **Healthy data ecosystems:** Invest in the quality, accessibility, and unification of your internal data, as a healthy data ecosystem significantly amplifies the benefits of AI on organizational performance.
+
+3.  **AI-accessible internal data:** Connect your AI tools to internal systems to move beyond generic assistance and unlock boosts in individual effectiveness and code quality.
+
+4.  **Strong version control practices:** Encourage teams to become highly proficient in using features like rollbacks, as this practice acts as a critical safety net that is associated with better team performance in an AI-assisted environment.
+
+5.  **Working in small batches:** Enforce the discipline of breaking down work into smaller items, which improves product performance and reduces friction for AI-assisted teams.
+
+6.  **User-centric focus:** Center your product's strategy around the needs of your users, as this focus can amplify AI's positive effect on team performance and is a prerequisite for success.
+
+7.  **Quality internal platforms:** Invest in your internal platform, as it is a key enabler for magnifying the positive effects of AI on organizational performance by providing necessary guardrails and shared capabilities.
+
+Source: [DORA State Of AI Assisted Software Development Report for 2025](https://dora.dev/research/2025/dora-report/)
