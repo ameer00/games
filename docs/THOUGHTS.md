@@ -2,7 +2,30 @@
 
 This document outlines a collection of best practices and ideas for effectively using AI agentic tools for coding tasks.
 
-## 1. Context Engineering
+## 1. Modes of Working: Player, Coach, Owner Modes
+
+There are three primary modes for interacting with AI agentic coding tools, each defined by the level of human involvement.
+
+```
++-------------------------------------------------------------------------+
+|                        MODES OF WORKING                                 |
++-------------------------------------------------------------------------+
+|                                                                         |
+|   +------------+      +-------------+      +------------------------+   |
+|   |   PLAYER   |----->|    COACH    |----->|         OWNER          |   |
+|   +------------+      +-------------+      +------------------------+   |
+|   (Interactive)     (Semi-Interactive)      (Async / Non-Interactive)   |
+|                                                                         |
++-------------------------------------------------------------------------+
+```
+
+1.  **Player Mode:** In this mode, the human is deeply involved in the process, continuously interacting with the tool. It's analogous to a player in a game who is directly responsible for executing each play. The user guides the agent step-by-step, providing constant feedback and making micro-decisions.
+
+2.  **Coach Mode:** Here, the human acts more like a coach. Instead of running every play, the user defines the overall strategy and the "plays" (e.g., high-level plans, specifications, or workflows). The agent (the "player") is then responsible for executing that strategy with a greater degree of autonomy. Interaction is less frequent, focused on setting direction and reviewing outcomes rather than guiding every action.
+
+3.  **Owner Mode:** This mode represents the highest level of automation, with minimal to no real-time human interaction. The human acts like a sports team owner, who hires the right coaches and staff and trusts them to manage the team and win games. In this mode, tasks are handled asynchronously and non-interactively. The user sets the ultimate goal, and the agentic system is responsible for the entire process, from planning to execution, without direct supervision.
+
+## 2. Context Engineering
 
 The quality of the output from an AI agent is heavily dependent on the quality of the context provided.
 
@@ -41,7 +64,7 @@ The quality of the output from an AI agent is heavily dependent on the quality o
 4.  **Dynamic Context Selection (`@`):** Use context selection commands (like `@` commands) to dynamically bring specific files or directories into the agent's working context for a particular task.
 5.  **Personas:** Define a clear persona for the AI agent within your instruction files. This helps guide its tone, style, and decision-making process to better align with your project's conventions.
 
-## 2. Memory Management
+## 3. Memory Management
 
 Effectively managing the agent's memory is crucial for both cost-efficiency and continuity.
 
@@ -78,7 +101,7 @@ Effectively managing the agent's memory is crucial for both cost-efficiency and 
 4.  **Chat Threads:** Maintain separate chat threads for different tasks or contexts to keep the agent's short-term memory focused and relevant.
 5.  **Context Clearing (`/clear`):** Use commands like `/clear` to reset the agent's context. This is useful when switching tasks or after a discovery phase (e.g., after creating a `PLAN.md`). Clearing the context and then loading a specific file (like the plan) focuses the agent, conserves tokens, and can lead to better performance.
 
-## 3. Safe Vibe Coding
+## 4. Safe Vibe Coding
 
 Ensuring a safe and predictable interaction with an AI agent is essential, especially when it has access to your file system and can execute commands.
 
@@ -91,7 +114,7 @@ Ensuring a safe and predictable interaction with an AI agent is essential, espec
                                                          +---------------------+
                                                          | GOOD VCS PRACTICES  |
                                                          +---------------------+
-                                                                   |
+                                                                   | 
                                                                    v
                                                      NEW GIT BRANCH | COMMIT OFTEN | ...
 ```
@@ -102,7 +125,7 @@ Ensuring a safe and predictable interaction with an AI agent is essential, espec
 4.  **Conduct thorough code reviews before merging changes.**
 5.  **Maintain consistent code style and adhere to project linting rules.**
 
-## 4. Workflows
+## 5. Workflows
 
 Adopting structured workflows enhances the efficiency and reliability of AI-assisted coding.
 
@@ -136,7 +159,7 @@ Adopting structured workflows enhances the efficiency and reliability of AI-assi
 5.  **Custom Commands:** Create custom commands or scripts to encapsulate common, reusable workflows. This streamlines repetitive tasks and makes the agent more efficient.
 6.  **Agentic Loop (ReAct):** Understand and leverage the agent's underlying interaction model (often a ReAct loop: Reason + Act). Providing clear goals and allowing the agent to think, act, and observe is more effective than micromanaging its every step.
 
-## 5. Model Selection
+## 6. Model Selection
 
 ```
 +----------------+   "hey brother, how'd I do?"   +----------------+
@@ -152,26 +175,3 @@ Adopting structured workflows enhances the efficiency and reliability of AI-assi
 3.  **Dynamically Curated Context:** In this system, the context is dynamically curated for each specific step. The planning phase might require high-level user stories, while the coding phase is given only the approved plan and relevant existing code files. Each step's output becomes new, validated context for the next, creating a reliable chain of progress.
 4.  **Control and Customizability:** While this method requires more upfront work to define the workflow, it grants teams far greater control and customizability, leading to more predictable and higher-quality outcomes.
 5.  **Use Different Models for Judging:** Use different models to judge the work in the task. For example, if you use the Pro model to craft the `PLAN.md` then use the Flash model to review/judge/ideate over the `PLAN.md`. You could also use the same model to judge itself but using a different model seems more appropriate.
-
-## 6. Modes of Working: Player, Coach, Owner Modes
-
-There are three primary modes for interacting with AI agentic coding tools, each defined by the level of human involvement.
-
-```
-+-------------------------------------------------------------------------+
-|                        MODES OF WORKING                                 |
-+-------------------------------------------------------------------------+
-|                                                                         |
-|   +------------+      +-------------+      +------------------------+   |
-|   |   PLAYER   |----->|    COACH    |----->|         OWNER          |   |
-|   +------------+      +-------------+      +------------------------+   |
-|   (Interactive)     (Semi-Interactive)      (Async / Non-Interactive)   |
-|                                                                         |
-+-------------------------------------------------------------------------+
-```
-
-1.  **Player Mode:** In this mode, the human is deeply involved in the process, continuously interacting with the tool. It's analogous to a player in a game who is directly responsible for executing each play. The user guides the agent step-by-step, providing constant feedback and making micro-decisions.
-
-2.  **Coach Mode:** Here, the human acts more like a coach. Instead of running every play, the user defines the overall strategy and the "plays" (e.g., high-level plans, specifications, or workflows). The agent (the "player") is then responsible for executing that strategy with a greater degree of autonomy. Interaction is less frequent, focused on setting direction and reviewing outcomes rather than guiding every action.
-
-3.  **Owner Mode:** This mode represents the highest level of automation, with minimal to no real-time human interaction. The human acts like a sports team owner, who hires the right coaches and staff and trusts them to manage the team and win games. In this mode, tasks are handled asynchronously and non-interactively. The user sets the ultimate goal, and the agentic system is responsible for the entire process, from planning to execution, without direct supervision.
