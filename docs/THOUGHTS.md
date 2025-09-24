@@ -6,6 +6,35 @@ This document outlines a collection of best practices and ideas for effectively 
 
 The quality of the output from an AI agent is heavily dependent on the quality of the context provided.
 
+```
+              +---------------------------------+
+              |      CONTEXT ENGINEERING        |
+              +---------------------------------+
+                   | | | | | | | | | | | |
+                   v v v v v v v v v v v v
+             +-----------------------------+
+             |                             |
+  [data]---> |           .---.             |
+             |          / o o \            |
+  [code]---> |          | \_/ |            |
+             |           \ - /             |
+  [docs]---> |           (---)             |
+             |          /-----\            |
+  [user]---> |                             |
+             |                             |
+             +-----------------------------+
+                   | | | | | | | | | | | |
+                   v v v v v v v v v v v v
+            +---------------------------------+
+            |            AI Agent             |
+            +---------------------------------+
+                   | | | | | | | | | | | |
+                   v v v v v v v v v v v v
+            +---------------------------------+
+            |      Large Language Model       |
+            +---------------------------------+
+```
+
 1.  **Instructional Files (`GEMINI.md`):** Use dedicated files (like `GEMINI.md`) to provide persistent, project-specific instructions, rules, and context to the AI. This is more effective than repeating instructions in every prompt.
 2.  **Hierarchical Context:** Organize instructional files hierarchically (global, project, personal). This allows for broad rules to be set at a higher level and specific overrides or additions at a lower, more local level.
 3.  **Modular Imports:** Break down large instruction files into smaller, modular files and import them where needed. This improves organization and reusability of context.
@@ -15,6 +44,33 @@ The quality of the output from an AI agent is heavily dependent on the quality o
 ## 2. Memory Management
 
 Effectively managing the agent's memory is crucial for both cost-efficiency and continuity.
+
+```
++-------------------------------------------------------------------------+
+|                           AI MEMORY MANAGEMENT                          |
++-------------------------------------------------------------------------+
+|                                                                         |
+|                            +----------------+                           |
+|                            |  Memory Files  |                           |
+|                            | [o] [o] [o]    |                           |
+|                            +----------------+                           |
+|                                   |                                     |
+|                 +-----------------+-----------------+                   |
+|                 |                                   |                   |
+|                 v                                   v                   |
+|          +-----------------+             +-----------------+            |
+|          |  Chat Thread 1  |             |  Chat Thread 2  |            |
+|          +-----------------+             +-----------------+            |
+|            ^          |                  ^           |                  |
+|            |          v                  |           v                  |
+|      (Checkpoint)   (Clear)        (Checkpoint)    (Clear)              |
+|                                                                         |
+|      +----------------------------------------------------------+       |
+|      |    Token Optimization (Caching)  --> $$$                 |       |
+|      +----------------------------------------------------------+       |
+|                                                                         |
++-------------------------------------------------------------------------+
+```
 
 1.  **Dedicated Memory Files:** Use specific files to store facts, user preferences, or project details that the agent should remember across sessions.
 2.  **Checkpointing:** Leverage checkpointing features to save the state of your project before the agent makes changes. This allows for easy restoration if the agent's actions do not align with your intent.
@@ -26,6 +82,20 @@ Effectively managing the agent's memory is crucial for both cost-efficiency and 
 
 Ensuring a safe and predictable interaction with an AI agent is essential, especially when it has access to your file system and can execute commands.
 
+```
+       +------------+             +------------+             +-------------+
+       |  RESEARCH  | --YOLO ON-->|    PLAN    | --YOLO ON-->|  IMPLEMENT  |
+       +------------+             +------------+             +-------------+
+                                                                   |
+                                                                   v
+                                                         +---------------------+
+                                                         | GOOD VCS PRACTICES  |
+                                                         +---------------------+
+                                                                   |
+                                                                   v
+                                                     NEW GIT BRANCH | COMMIT OFTEN | ...
+```
+
 1.  **Have concrete stoppage points:** for example for planning phase, let the tool vibe its way to a finished plan and then stop and await further instructions. This way, you can use the tool in a "semi-interactive" manner and go from phase to phase.
 2.  **Use version control best practices:** for example, always make changes in new git branch, commit often with clear commit messages and small changes (that can be rolled back).
 3.  **Implement automated testing for all new code:** ensuring tests are comprehensive and cover edge cases.
@@ -35,6 +105,27 @@ Ensuring a safe and predictable interaction with an AI agent is essential, espec
 ## 4. Workflows
 
 Adopting structured workflows enhances the efficiency and reliability of AI-assisted coding.
+
+**Workflow 1: Simple**
+```
++----------+      +------+      +-----------+
+| RESEARCH |----->| PLAN |----->| IMPLEMENT |
++----------+      +------+      +-----------+
+```
+
+**Workflow 2: Standard**
+```
++----------+      +------+      +--------+      +-----------+      +------+
+| RESEARCH |----->| PLAN |----->| REFINE |----->| IMPLEMENT |----->| TEST |
++----------+      +------+      +--------+      +-----------+      +------+
+```
+
+**Workflow 3: Comprehensive**
+```
++----------+   +-----------+   +--------+   +----------+   +-----------+   +------+   +---------+   +--------+   +--------+   +--------+   +---------+
+| RESEARCH |-->| PLAN/SPEC |-->| REFINE |-->| VALIDATE |-->| IMPLEMENT |-->| TEST |-->| EXECUTE |-->| COMMIT |-->| REVIEW |-->| DEPLOY |-->| MONITOR |
++----------+   +-----------+   +--------+   +----------+   +-----------+   +------+   +---------+   +--------+   +--------+   +--------+   +---------+
+```
 
 1.  **Test-Driven Development (TDD):** Have the agent write tests first, then write the code to pass those tests. This ensures the resulting code meets the requirements and is verifiable.
 2.  **Specification-Driven Development:** Start by having the agent generate a detailed plan or specification. Refine and validate this plan before allowing the agent to proceed with implementation.
@@ -46,6 +137,12 @@ Adopting structured workflows enhances the efficiency and reliability of AI-assi
 6.  **Agentic Loop (ReAct):** Understand and leverage the agent's underlying interaction model (often a ReAct loop: Reason + Act). Providing clear goals and allowing the agent to think, act, and observe is more effective than micromanaging its every step.
 
 ## 5. Model Selection
+
+```
++----------------+   "hey brother, how'd I do?"   +----------------+
+|   GEMINI PRO   | <----------------------------> |  GEMINI FLASH  |
++----------------+                                +----------------+
+```
 
 1.  **Instruction Following over Model Quality:** A model's ability to accurately follow instructions is ultimately more critical than its intrinsic quality. High-quality, reliable results are better achieved by guiding a model through a well-defined process rather than relying on a more powerful model to figure out a complex task on its own.
 2.  **Step-by-Step Workflow:** This approach works by providing the model with a detailed, step-by-step workflow, often outlined in a prescriptive document. Instead of a single, broad request, a task is broken down into smaller, distinct stages with clear stopping points for verification. For example, when creating a new software feature, the process might be:
