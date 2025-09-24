@@ -152,3 +152,26 @@ Adopting structured workflows enhances the efficiency and reliability of AI-assi
 3.  **Dynamically Curated Context:** In this system, the context is dynamically curated for each specific step. The planning phase might require high-level user stories, while the coding phase is given only the approved plan and relevant existing code files. Each step's output becomes new, validated context for the next, creating a reliable chain of progress.
 4.  **Control and Customizability:** While this method requires more upfront work to define the workflow, it grants teams far greater control and customizability, leading to more predictable and higher-quality outcomes.
 5.  **Use Different Models for Judging:** Use different models to judge the work in the task. For example, if you use the Pro model to craft the `PLAN.md` then use the Flash model to review/judge/ideate over the `PLAN.md`. You could also use the same model to judge itself but using a different model seems more appropriate.
+
+## 6. Modes of Working: Player, Coach, Owner Modes
+
+There are three primary modes for interacting with AI agentic coding tools, each defined by the level of human involvement.
+
+```
++-------------------------------------------------------------------------+
+|                        MODES OF WORKING                                 |
++-------------------------------------------------------------------------+
+|                                                                         |
+|   +------------+      +-------------+      +------------------------+   |
+|   |   PLAYER   |----->|    COACH    |----->|         OWNER          |   |
+|   +------------+      +-------------+      +------------------------+   |
+|   (Interactive)     (Semi-Interactive)      (Async / Non-Interactive)   |
+|                                                                         |
++-------------------------------------------------------------------------+
+```
+
+1.  **Player Mode:** In this mode, the human is deeply involved in the process, continuously interacting with the tool. It's analogous to a player in a game who is directly responsible for executing each play. The user guides the agent step-by-step, providing constant feedback and making micro-decisions.
+
+2.  **Coach Mode:** Here, the human acts more like a coach. Instead of running every play, the user defines the overall strategy and the "plays" (e.g., high-level plans, specifications, or workflows). The agent (the "player") is then responsible for executing that strategy with a greater degree of autonomy. Interaction is less frequent, focused on setting direction and reviewing outcomes rather than guiding every action.
+
+3.  **Owner Mode:** This mode represents the highest level of automation, with minimal to no real-time human interaction. The human acts like a sports team owner, who hires the right coaches and staff and trusts them to manage the team and win games. In this mode, tasks are handled asynchronously and non-interactively. The user sets the ultimate goal, and the agentic system is responsible for the entire process, from planning to execution, without direct supervision.
