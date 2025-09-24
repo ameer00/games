@@ -63,6 +63,7 @@
   - [MCP Prompts](https://cloud.google.com/blog/topics/developers-practitioners/gemini-cli-custom-slash-commands?e=48754805)
 - [Extensions](https://github.com/google-gemini/gemini-cli/blob/main/docs/extension.md)
   - Gemini CLI Extensions allow users to expand the CLI's capabilities by packaging prompts, MCP servers, and custom commands. They can be installed, uninstalled, enabled, disabled, and updated.
+  - [Automate app deployment and security analysis with new Gemini CLI extensions](https://cloud.google.com/blog/products/ai-machine-learning/automate-app-deployment-and-security-analysis-with-new-gemini-cli-extensions)
 - Model Selection
 - [Non interactive mode for CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md#custom-commands)
 - Triggering CLI
