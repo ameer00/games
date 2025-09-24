@@ -208,6 +208,8 @@ Measuring the impact of AI on software development is crucial. The DORA metrics 
 
 5.  **Rework Rate (RR):** The ratio of deployments that are unplanned but happen as a result of an incident in production. This is another key instability metric.
 
+Source: [DORA State Of AI Assisted Software Development Report for 2025](https://dora.dev/research/2025/dora-report/)
+
 ## 8. Adoption and Measuring Impact of AI Tools
 
 Adopting AI tools and measuring their impact is a complex process that requires careful planning and execution. The adoption journey can be broken down into four key stages:
