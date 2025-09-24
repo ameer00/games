@@ -167,7 +167,7 @@ Adopting structured workflows enhances the efficiency and reliability of AI-assi
 +----------------+                                +----------------+
 ```
 
-1.  **Instruction Following over Model Quality:** A model's ability to accurately follow instructions is ultimately more critical than its intrinsic quality. High-quality, reliable results are better achieved by guiding a model through a well-defined process rather than relying on a more powerful model to figure out a complex task on its own.
+1.  **Instruction Following over Model Quality:** A model's ability to accurately follow instructions is ultimately more critical than its intrinsic quality. High-quality, reliable results are better achieved by guiding a a model through a well-defined process rather than relying on a more powerful model to figure out a complex task on its own.
 2.  **Step-by-Step Workflow:** This approach works by providing the model with a detailed, step-by-step workflow, often outlined in a prescriptive document. Instead of a single, broad request, a task is broken down into smaller, distinct stages with clear stopping points for verification. For example, when creating a new software feature, the process might be:
     *   **Generate a Plan:** The model is first instructed to analyze the requirements and produce a detailed implementation plan. The process then stops, allowing a developer to review and approve the plan.
     *   **Write Code & Tests:** With the approved plan as context, the model is then instructed to write the necessary code and corresponding unit tests. The process pauses again until all generated tests pass successfully.
@@ -175,3 +175,35 @@ Adopting structured workflows enhances the efficiency and reliability of AI-assi
 3.  **Dynamically Curated Context:** In this system, the context is dynamically curated for each specific step. The planning phase might require high-level user stories, while the coding phase is given only the approved plan and relevant existing code files. Each step's output becomes new, validated context for the next, creating a reliable chain of progress.
 4.  **Control and Customizability:** While this method requires more upfront work to define the workflow, it grants teams far greater control and customizability, leading to more predictable and higher-quality outcomes.
 5.  **Use Different Models for Judging:** Use different models to judge the work in the task. For example, if you use the Pro model to craft the `PLAN.md` then use the Flash model to review/judge/ideate over the `PLAN.md`. You could also use the same model to judge itself but using a different model seems more appropriate.
+
+## 7. Measuring Software Delivery Performance (DORA 5 Key Metrics)
+
+Measuring the impact of AI on software development is crucial. The DORA metrics provide a well-established framework for this.
+
+```
++-------------------------------------------------------------------------+
+|                             MEASURING AI                                |
++-------------------------------------------------------------------------+
+|                                                                         |
+|      +-----------------+              +----------------------+          |
+|      |   THROUGHPUT    |              |      INSTABILITY     |          |
+|      +-----------------+              +----------------------+          |
+|              |                                |                         |
+|   +------------------------+     +---------------------------+          |
+|   | Lead Time for Changes  |     |   Change Fail Rate        |          |
+|   | Deployment Frequency   |     |   Mean Time to Restore    |          |
+|   +------------------------+     |   Rework Rate             |          |
+|                                  +---------------------------+          |
+|                                                                         |
++-------------------------------------------------------------------------+
+```
+
+1.  **Lead Time for Changes (LT):** The amount of time it takes for a change to go from committed to version control to deployed in production. This is a key throughput metric.
+
+2.  **Deployment Frequency (DF):** The number of deployments over a given period or the time between deployments. This is another key throughput metric.
+
+3.  **Change Fail Rate (CFR):** The ratio of deployments that require immediate intervention following a deployment. This is a key instability metric.
+
+4.  **Mean Time to Restore (MTTR):** The time it takes to restore service after an incident. This is a key instability metric.
+
+5.  **Rework Rate (RR):** The ratio of deployments that are unplanned but happen as a result of an incident in production. This is another key instability metric.
